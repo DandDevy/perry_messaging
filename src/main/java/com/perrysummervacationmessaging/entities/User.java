@@ -35,4 +35,8 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "destination", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Message> messagesSend = new ArrayList<>();
+
+    public User(UUID userId) {
+        this.userId= userId;
+    }
 }

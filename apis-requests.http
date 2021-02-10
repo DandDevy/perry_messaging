@@ -1,0 +1,81 @@
+
+POST http://localhost:8080/user
+
+<> 2021-02-10T132934.201.json
+<> 2021-02-10T121054.201.json
+<> 2021-02-10T121052.201.json
+<> 2021-02-10T121051.201.json
+<> 2021-02-10T121048.201.json
+<> 2021-02-10T121036.201.json
+<> 2021-02-10T120443.200.json
+<> 2021-02-10T120429.404.json
+<> 2021-02-10T120310.404.json
+<> 2021-02-10T120002.404.json
+
+###
+GET http://localhost:8080/user
+
+<> 2021-02-10T174209.200.json
+<> 2021-02-10T174151.200.json
+<> 2021-02-10T172940.200.json
+<> 2021-02-10T172728.200.json
+<> 2021-02-10T172125.200.json
+<> 2021-02-10T164959.200.json
+<> 2021-02-10T132957.200.json
+<> 2021-02-10T122419.302.json
+<> 2021-02-10T122357.302.json
+<> 2021-02-10T122255.405.json
+<> 2021-02-10T122240.405.json
+
+###
+POST http://localhost:8080/message
+Content-Type: application/json
+
+{
+  "text": "test",
+
+  "origin": {
+    "userId": "3a57e37f-ee94-4191-9fd7-6aa271250239"
+  },
+  "destination": {
+    "userId": "3a57e37f-ee94-4191-9fd7-6aa271250239"
+  }
+}
+
+<> 2021-02-10T174219.201.json
+<> 2021-02-10T172909.400.json
+<> 2021-02-10T172741.400.json
+<> 2021-02-10T172715.400.json
+<> 2021-02-10T172709.400.json
+<> 2021-02-10T170422.404.json
+<> 2021-02-10T170407.404.json
+<> 2021-02-10T170359.404.json
+<> 2021-02-10T170327.404.json
+<> 2021-02-10T164645.400.json
+<> 2021-02-10T164604.404.json
+
+###
+GET http://localhost:8080/message
+Content-Type: application/json
+
+{
+  "origin": {
+    "userId": "19c08a45-232d-4a18-8dcd-bad11b6d8121"
+  },
+  "destination": {
+    "userId": "19c08a45-232d-4a18-8dcd-bad11b6d8121"
+  }
+}
+
+###
+PUT http://localhost:8080/message
+Content-Type: application/json
+
+{
+  "messageId": "d199aa95-7467-4ed4-b2b9-229c0b225fd4",
+  "text": "new text here!"
+
+}
+
+###
+DELETE http://localhost:8080/message/d199aa95-7467-4ed4-b2b9-229c0b225fd4

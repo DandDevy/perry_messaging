@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.UUID;
 
@@ -20,9 +21,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class Message {
 
-    @JsonIgnore
     public static final int MAX_MESSAGE_SIZE = 256;
-    @JsonIgnore
     public static final int MIN_MESSAGE_SIZE = 1;
 
     @Id
@@ -37,13 +36,13 @@ public class Message {
     @Column(nullable = false)
     private String text;
 
+    @NotNull
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "origin_user_id", nullable = false)
     private User origin;
 
+    @NotNull
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "destination_user_id", nullable = false)
     private User destination;
 
@@ -55,4 +54,7 @@ public class Message {
     }
 
 
+    public Message(UUID messageId) {
+        this.messageId = messageId;
+    }
 }
