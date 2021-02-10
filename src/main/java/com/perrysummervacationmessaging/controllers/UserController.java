@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * UserController is the controller for all user endpoints.
+ */
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -16,6 +19,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * create makes a new User and returns it with 201 or returns only 409.
+     */
     @PostMapping
     public ResponseEntity<User> create(){
         User user = userService.create();
@@ -25,6 +31,9 @@ public class UserController {
         return new ResponseEntity<>(user, HttpStatus.CREATED);
     }
 
+    /**
+     * findall finds all users and returns them with 200 or returns only 404.
+     */
     @GetMapping
     public ResponseEntity<List<User>> findAll(){
         List<User> users = userService.findAll();

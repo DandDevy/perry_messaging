@@ -13,11 +13,20 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserDao userDao;
 
+    /**
+     * Creates a new User for the system and returns it.
+     * @return User
+     */
+    @Override
     public User create(){
         User newUser = new User();
         return userDao.save(newUser);
     }
 
+    /**
+     * Get a list
+     * @return List<User>
+     */
     @Override
     public List<User> findAll() {
         return userDao.findAll();
